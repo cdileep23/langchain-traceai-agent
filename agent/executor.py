@@ -20,7 +20,6 @@ def build_executor() -> AgentExecutor:
     model = ChatAnthropic(
         model=os.environ.get("ANTHROPIC_MODEL", "claude-haiku-5-5"),
         api_key=os.environ.get("ANTHROPIC_API_KEY"),
-        temperature=0,
         max_tokens=1024,
     )
     prompt = ChatPromptTemplate.from_messages(
