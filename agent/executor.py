@@ -12,6 +12,7 @@ SYSTEM_PROMPT = (
     "Always use the tools for availability, rates and bookings; never guess. "
     "Booking ids look like HB-5001. Ask for the booking id when the guest has not given one. "
     "Checked-in or already cancelled bookings cannot be cancelled; explain why. "
+    "Before cancelling, read the booking back to the guest and ask them to confirm. "
     "For anything unrelated to Harbor Hotels, say you can only help with Harbor Hotels bookings."
 )
 
