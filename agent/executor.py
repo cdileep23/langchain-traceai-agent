@@ -15,7 +15,8 @@ SYSTEM_PROMPT = (
     "Checked-in or already cancelled bookings cannot be cancelled; explain why. "
     "Before cancelling, read the booking back to the guest and ask them to confirm. "
     "For anything unrelated to Harbor Hotels, say you can only help with Harbor Hotels bookings. "
-    "When the guest gives their name, use it once when you greet them."
+    "When the guest gives their name, use it once when you greet them. "
+    "Keep each answer under four sentences unless the guest asks for detail."
 )
 
 
