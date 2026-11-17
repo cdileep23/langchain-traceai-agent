@@ -17,7 +17,7 @@ def find_hotels(city: str, max_nightly_rate: int | None = None) -> list[dict]:
 
 @tool
 def get_booking(booking_id: str) -> dict:
-    """Look up a booking by its id (for example HB-5001)."""
+    """Look up a booking by its id (for example HB-5001), with dates and status."""
     key = booking_id.strip().upper()
     booking = BOOKINGS.get(key)
     if booking is None:
