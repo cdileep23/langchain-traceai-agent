@@ -57,3 +57,7 @@ pip install -r requirements.txt
 ANTHROPIC_API_KEY=... python -m agent.server
 curl -s localhost:8080/chat -H 'content-type: application/json' -d '{"new_message":"hotels in Lisbon under 150","messages":[]}'
 ```
+
+## Late checkout
+
+Guests can ask for late checkout until 1 pm; the agent checks it with `check_late_checkout`.
