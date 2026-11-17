@@ -5,7 +5,7 @@ from .store import BOOKINGS, HOTELS
 
 @tool
 def find_hotels(city: str, max_nightly_rate: int | None = None) -> list[dict]:
-    """List Harbor Hotels in a city, optionally under a nightly rate, with rooms left."""
+    """List Harbor Hotels in a city, optionally under a nightly rate in euros, with rooms left."""
     wanted = city.strip().lower()
     return [
         hotel
@@ -38,4 +38,14 @@ def cancel_booking(booking_id: str) -> dict:
     return {"cancelled": True, "booking_id": key}
 
 
-TOOLS = [find_hotels, get_booking, cancel_booking]
+@tool
+def check_late_checkout(booking_id: str) -> dict:
+    """Check whether a confirmed booking can check out late, until 1 pm."""
+    key = booking_id.strip().upper()
+    booking = BOOKINGS.get(key)
+    if booking is None:
+        return {"available": False, "error": "booking_not_found"}
+    return {"available": booking["status"] == "confirmed", "booking_id": key, "until": "13:00"}
+
+
+TOOLS = [find_hotels, get_booking, cancel_booking, check_late_checkout]
